@@ -1,0 +1,40 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "description": "description",
+      "version": "1.0.0",
+      "title": "Python3-Flask-Rest-Boilerplate"
+    },
+    "paths": {
+        "/items": {
+            "get": {
+                "summary": "Returns Item", 
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/components/schemas/Item"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components":{
+        "schemas": {
+            "Item": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "type": "string",
+                        "format": "string"
+                    }
+                }
+            }
+        }
+    }
+}

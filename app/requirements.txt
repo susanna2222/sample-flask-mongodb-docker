@@ -1,0 +1,6 @@
+flask
+flask-swagger-ui
+Flask-PyMongo
+flask-injector
+flask_cors
+python-dotenv

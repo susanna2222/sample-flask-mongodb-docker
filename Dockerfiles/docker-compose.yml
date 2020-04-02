@@ -1,0 +1,19 @@
+version: '3'
+services:
+    mongodb:
+        image: mongo:latest
+        # コンテナのデータをボリュームとしてホストOSにマウント
+        ports:
+            - "27017:27017"
+        # environment:
+        #     MONGO_INITDB_ROOT_USERNAME: mongo
+        #     MONGO_INITDB_ROOT_PASSWORD: mongo
+        volumes:
+            - ./db:/data/db
+            - ./configdb:/data/configdb
+    flask-rest:
+        build: .
+        ports:
+            - "5000:5000"
+        environment:
+            TZ: Asia/Tokyo
